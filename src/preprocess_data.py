@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.impute import KNNImputer
 import matplotlib.pyplot as plt
 from collections import Counter
-from torch.utils.data import Dataset
+
 
 def get_columns_with_null_values(df):
     '''
@@ -415,33 +415,3 @@ def all_preprocess(id, seed, test_size,standardscaler_status=True,feature_range_
 
     return X_train,X_val,X_test,y_train,y_val,y_test,numerical_indices,categorical_indices,n_categories,n_labels
 
-
-class CustomDictDataset(Dataset):
-    def __init__(self, data_dict, binary_class=True):
-
-        # Labels (ya son tensores)
-        if binary_class:
-            self.labels = data_dict["y"].float()
-        else:
-            self.labels = data_dict["y"].long()
-
-        # Categorical features
-        self.has_categorical = "x_cat" in data_dict
-        if self.has_categorical:
-            self.categorical = data_dict["x_cat"].long()
-
-        # Continuous features
-        self.has_numerical = "x_cont" in data_dict
-        if self.has_numerical:
-            self.continuous = data_dict["x_cont"].float()
-
-    def __len__(self):
-        return self.labels.shape[0]
-
-    def __getitem__(self, idx):
-        sample = {"target": self.labels[idx]}
-        if self.has_categorical:
-            sample["x_cat"] = self.categorical[idx]
-        if self.has_numerical:
-            sample["x_cont"] = self.continuous[idx]
-        return sample
