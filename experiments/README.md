@@ -74,3 +74,16 @@ Before running an experiment, ensure that the selected dataset follows the requi
 The experimental scripts load the dataset features, target labels, metadata, and predefined split indices from the corresponding dataset directory.
 
 MSTT is then trained and evaluated across the available cross-validation folds.
+
+## Third-Party Code
+
+This repository includes selected utilities from the TabZilla
+project to facilitate the reproducibility of the MSTT experiments.
+
+The original TabZilla implementation is distributed under the
+Apache License, Version 2.0.
+
+The corresponding license is provided in `LICENSE-TabZilla`.
+
+Original repository:
+https://github.com/naszilla/tabzilla

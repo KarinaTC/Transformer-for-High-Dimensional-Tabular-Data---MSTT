@@ -223,3 +223,6 @@ mstt_venv/
 # Python cache
 __pycache__/
 *.pyc
+
+#Dataset
+dataset/
