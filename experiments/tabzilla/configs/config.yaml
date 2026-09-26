@@ -1,0 +1,31 @@
+dataset:
+  name: jasmine
+  dataset_path: experiments/tabzilla/example_dataset/openml__jasmine__168911/ 
+
+# Experimental configuration
+experiment:
+  seed: 42
+  device: cuda
+  save_result: True
+  path_save_result: experiments/tabzilla/results/jasmine.json 
+
+dataloader:
+  batch_size: 64
+  num_workers: 4
+  pin_memory: True
+  drop_last: False
+
+model:
+  hidden_dim_supmlp: 128
+  pos_norm: False
+  bias_st_cat: True,
+  positional_enc_status: False
+  divisor: None
+
+training:
+  patience_early_stop: 10
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  epochs: 200
+
+

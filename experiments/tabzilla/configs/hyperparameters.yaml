@@ -1,0 +1,8 @@
+hyperparameters:
+  num_learned_features: [[[14]],[[14],[7]],[[14],[7],[3]],[[7,7]],[[7,7],[3,3]],[[4,5,5]],[[4,5,5],[2,2,2]],[[3,3,4,4]],[[3,3,4,4],[2,2,2,2]],[[2,3,3,3,3]]]
+  num_heads: [4,8]
+  dim_model: [128,256]
+
+experiment:
+  number_of_configurations_per_split: 10
+        
